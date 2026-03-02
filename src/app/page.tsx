@@ -27,6 +27,12 @@ export default function Home() {
           >
             開発プロジェクト実績
           </Link>
+          <Link
+            href="/portfolio#cs-1"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-purple-200 bg-purple-50 text-purple-700 px-8 text-sm font-bold shadow-sm transition-colors hover:bg-purple-100"
+          >
+            AI / LLM 個人開発実績
+          </Link>
         </div>
       </div>
 
