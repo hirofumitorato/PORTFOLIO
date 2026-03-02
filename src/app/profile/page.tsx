@@ -1,31 +1,56 @@
+import { CheckCircle2 } from "lucide-react";
+
 export const metadata = {
-    title: "Profile | Hirofumi Torato",
-    description: "Hirofumi Torato's professional background and work experience.",
+    title: "Profile | Torato Hirofumi",
+    description: "Torato Hirofumi's professional background, strengths, and work experience.",
 };
 
 export default function Profile() {
     const experiences = [
         {
             id: 1,
-            period: "2020 - Present",
-            role: "Lead Backend Engineer / Tech Lead",
-            company: "Tech Solutions Inc.",
+            period: "2025年4月 - 現在",
+            role: "フロントエンド開発 / 基本設計",
+            project: "マルチテナント型EC共通基盤（ZIP）",
+            tech: "SvelteKit / TypeScript / vanilla-extract / PostgreSQL",
             details: [
-                "アジャイル開発手法（スクラム）を導入し、開発チームの生産性を20%向上。",
-                "AWS IoT Core, Lambda, DynamoDBを用いた大規模なリアルタイムデータ処理基盤の構築を牽引。",
-                "要件定義からアーキテクチャ設計、実装、テスト、運用保守までフルサイクルで担当。",
-                "GoとTypeScriptを用いたマイクロサービス化を推進。"
+                "UIコンポーネント実装および大規模リファクタリングの実施",
+                "AI駆動開発の導入によるプロセス最適化",
+                "CI/CD環境の整備"
             ]
         },
         {
             id: 2,
-            period: "2016 - 2020",
-            role: "Backend Engineer",
-            company: "Web Services Co., Ltd.",
+            period: "2024年4月 - 2025年3月",
+            role: "テックリーダー",
+            project: "大手社内申請システム",
+            tech: "Java / Spring Boot / MySQL / OpenAPI",
             details: [
-                "Node.jsとRDBMSを用いた自社SaaSプロダクトの開発・運用保守。",
-                "CI/CDパイプライン（GitHub Actions, Docker）の構築によるデプロイの自動化。",
-                "レガシーシステムのモダン化（リファクタリング、Rustによる一部パフォーマンス改善）。"
+                "APIの設計および実装",
+                "OpenAPI Generatorを活用した開発の効率化",
+                "1週間スプリントでのアジャイル開発運用"
+            ]
+        },
+        {
+            id: 3,
+            period: "2023年10月 - 2024年3月",
+            role: "バックエンド開発",
+            project: "通信会社ポイント管理システム",
+            tech: "Java / Spring Boot / Oracle",
+            details: [
+                "ポイント計算ロジックの実装",
+                "結合・総合試験の実施"
+            ]
+        },
+        {
+            id: 4,
+            period: "2020年12月 - 2022年3月",
+            role: "開発・保守運用",
+            project: "CMS運用保守",
+            tech: "Java / MyBatis / PostgreSQL",
+            details: [
+                "システムの改修およびデータベース操作",
+                "本番リリース運用"
             ]
         }
     ];
@@ -36,45 +61,100 @@ export default function Profile() {
                 プロフィール
             </h1>
 
-            <section className="mb-16">
-                <h2 className="mb-6 text-2xl font-bold text-gray-800">Hirofumi Torato</h2>
-                <div className="prose max-w-none text-gray-600">
+            <section className="mb-12 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <h2 className="mb-6 text-2xl font-bold text-gray-800">基本情報</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+                    <div><span className="font-semibold text-gray-800 w-24 inline-block">氏名:</span>虎渡 広史（Torato Hirofumi）</div>
+                    <div><span className="font-semibold text-gray-800 w-24 inline-block">生年月日:</span>1985年11月19日（40歳）</div>
+                    <div><span className="font-semibold text-gray-800 w-24 inline-block">居住地:</span>東京都</div>
+                </div>
+                <div className="mt-6 pt-6 border-t border-gray-100">
                     <p className="leading-relaxed">
-                        長年のバックエンド開発経験と、クラウドインフラ（特にAWS）における深い知見を持つフルスタックエンジニアです。
-                        アジャイル開発の実践を通じて、変化に柔軟に対応しながら高い品質のソフトウェアを提供することに注力してきました。
-                        近年は、技術的な課題解決にとどまらず、AI技術（Google AntigravityやClaude Codeなど）を積極的にワークフローに取り入れ、
-                        圧倒的な開発スピードと品質を両立させる「AI顧問」としての活動に力を入れています。
+                        サービス業での長年の経験を経てITエンジニアへ転身。現在はフロントエンド（SvelteKit / TypeScript）およびバックエンド（NestJS / Spring Boot）の横断的な開発に従事しています。
+                        単なるAI活用ではなく、要件整理から設計ドラフト生成、テスト観点抽出、レビュー支援まで、**開発プロセス全体へのAI駆動の組み込み**を実践しています。
                     </p>
                 </div>
             </section>
 
-            <section>
+            <section className="mb-16">
+                <h2 className="mb-6 text-2xl font-bold text-gray-800 flex items-center gap-3">
+                    <span className="h-8 w-1 rounded-full bg-blue-600 block"></span>
+                    強み（Core Strengths）
+                </h2>
+                <div className="grid gap-6 md:grid-cols-2">
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h3 className="font-bold text-lg text-gray-900 mb-2">1. AI駆動開発の実装力</h3>
+                        <p className="text-gray-600 text-sm">AIを単なる補助ツールとしてではなく、設計・レビュー・テスト工程に統合し、チームの開発プロセス最適化に貢献します。</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h3 className="font-bold text-lg text-gray-900 mb-2">2. フルスタック自己完結力</h3>
+                        <p className="text-gray-600 text-sm">SvelteKit, TypeScript, NestJS, Spring Boot, PostgreSQLを用いて、UIからAPIまで一貫した対応が可能です。</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h3 className="font-bold text-lg text-gray-900 mb-2">3. モダン開発プロセス</h3>
+                        <p className="text-gray-600 text-sm">GitHub Flow, GitHub Actions, Docker, Jira / Confluenceを用いた、モダンで効率的なアジャイル開発環境に精通しています。</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h3 className="font-bold text-lg text-gray-900 mb-2">4. サービス業由来の対人能力</h3>
+                        <p className="text-gray-600 text-sm">長年のサービス業で培った合意形成、的確な要件ヒアリング、複雑な事象の構造整理を強みとしています。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="mb-16">
                 <h2 className="mb-8 text-2xl font-bold text-gray-800 flex items-center gap-3">
-                    <span className="h-8 w-1 rounded-full bg-blue-500 block"></span>
+                    <span className="h-8 w-1 rounded-full bg-blue-600 block"></span>
                     職務経歴
                 </h2>
 
-                <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 md:before:ml-[8.5rem] before:-translate-x-px before:h-full before:w-0.5 before:bg-gray-200">
                     {experiences.map((exp) => (
-                        <div key={exp.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 bg-white text-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors group-hover:border-blue-400 group-hover:shadow-md">
-                                <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
+                        <div key={exp.id} className="relative flex flex-col md:flex-row gap-6 group">
+                            <div className="md:w-32 flex-shrink-0 pt-1 text-sm font-bold text-blue-600 z-10 hidden md:block text-right">
+                                {exp.period}
                             </div>
-                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-shadow">
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                                    <h3 className="font-bold text-xl text-gray-900">{exp.role}</h3>
-                                    <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">{exp.period}</span>
+
+                            <div className="absolute left-5 md:left-[8.5rem] w-3 h-3 bg-white border-2 border-blue-600 rounded-full mt-1.5 -translate-x-[5px] z-10 group-hover:bg-blue-600 transition-colors"></div>
+
+                            <div className="md:hidden text-sm font-bold text-blue-600 pl-10">
+                                {exp.period}
+                            </div>
+
+                            <div className="ml-10 md:ml-0 bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex-grow">
+                                <div className="flex flex-wrap items-baseline gap-2 mb-2">
+                                    <h3 className="font-bold text-xl text-gray-900">{exp.project}</h3>
+                                    <span className="text-sm font-medium text-gray-500">/ {exp.role}</span>
                                 </div>
-                                <div className="text-sm text-gray-500 font-medium mb-4">{exp.company}</div>
-                                <ul className="text-gray-600 text-sm space-y-2 list-disc list-inside marker:text-gray-400">
+                                <div className="text-sm text-blue-600 font-medium mb-4 bg-blue-50 px-3 py-1 rounded inline-block">
+                                    {exp.tech}
+                                </div>
+                                <ul className="text-gray-600 text-sm space-y-2">
                                     {exp.details.map((detail, idx) => (
-                                        <li key={idx}>{detail}</li>
+                                        <li key={idx} className="flex gap-2">
+                                            <span className="text-gray-400 mt-0.5">-</span>
+                                            <span>{detail}</span>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
                         </div>
                     ))}
                 </div>
+            </section>
+
+            <section>
+                <h2 className="mb-6 text-2xl font-bold text-gray-800 flex items-center gap-3">
+                    <span className="h-8 w-1 rounded-full bg-blue-600 block"></span>
+                    資格
+                </h2>
+                <ul className="space-y-3">
+                    {["普通自動車第一種免許", "Oracle Certified Java Programmer Silver SE8", "生成AIパスポート"].map((cert, idx) => (
+                        <li key={idx} className="flex items-center gap-3 text-gray-700 bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                            <CheckCircle2 className="text-emerald-500" size={20} />
+                            {cert}
+                        </li>
+                    ))}
+                </ul>
             </section>
         </div>
     );

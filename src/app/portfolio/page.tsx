@@ -1,36 +1,51 @@
 import { ExternalLink, Github } from "lucide-react";
 
 export const metadata = {
-    title: "Portfolio | Hirofumi Torato",
-    description: "Projects and development work by Hirofumi Torato, including AI-assisted development.",
+    title: "Projects | Torato Hirofumi",
+    description: "Projects and development work by Torato Hirofumi.",
 };
 
 export default function Portfolio() {
     const projects = [
         {
             id: 1,
-            title: "リアルタイムデータ可視化ダッシュボード",
-            description: "AWS IoT Coreから送信されるセンサーデータをシームレスに処理し、Next.jsのフロントエンドでリアルタイムに描画するシステム。LambdaとDynamoDBを活用してスケーラブルな構成を実現。",
-            tags: ["TypeScript", "Next.js", "AWS IoT Core", "DynamoDB"],
-            link: "#",
-            featured: false,
+            title: "マルチテナント型EC共通基盤（ZIP）",
+            period: "2025年4月 — 現在",
+            role: "フロントエンド開発 / 基本設計",
+            description: "複数テナントで共通利用されるECプラットフォームの基盤開発において、SvelteKitを用いたフロントエンド開発と基本設計を担当。UIコンポーネントの実装や大規模リファクタリングを実施。",
+            tags: ["SvelteKit", "TypeScript", "vanilla-extract", "PostgreSQL", "AI駆動開発"],
+            featured: true,
+            process: "AI駆動開発を導入し、開発プロセス全体の最適化を実現。要件整理、設計ドラフト生成、レビュー支援などに活用し、CI/CD環境の整備も牽引。"
         },
         {
             id: 2,
-            title: "マイクロサービス型ECバックエンド",
-            description: "Go言語（Gin）とRustを使用して、高トラフィックなECサイトのバックエンドをリプレイス。決済処理のレイテンシを50%削減し、システムの可用性を大幅に向上させた。",
-            tags: ["Go", "Rust", "gRPC", "Docker", "AWS ECS"],
-            link: "#",
+            title: "大手社内申請システム",
+            period: "2024年4月 — 2025年3月",
+            role: "テックリーダー",
+            description: "JavaおよびSpring Bootを用いた社内向け申請システムのバックエンド開発。1週間ごとのスプリントによるアジャイル開発を主導。",
+            tags: ["Java", "Spring Boot", "MySQL", "OpenAPI"],
             featured: false,
+            process: "API設計から実装までを担当し、OpenAPI Generatorを活用したシームレスなAPI連携と開発の効率化を実現。"
         },
         {
             id: 3,
-            title: "ポートフォリオサイト（本サイト）",
-            description: "自律型AIエージェント「Google Antigravity」を活用し、プロンプトベースでの要件定義から実装、デプロイメントの準備までを完遂。AIとのペアプログラミングによる超高速開発のユースケースとして位置づけている。",
-            tags: ["Next.js", "Tailwind CSS", "Google Antigravity", "Vercel"],
-            link: "https://github.com/torato/portfolio-demo",
-            featured: true,
-            process: "Antigravityへの包括的なプロンプト（要件、構成、デザイン方針）を提供。エージェントが自律してNext.jsプロジェクトの初期化からコンポーネント実装、レスポンシブ対応までをワンストップで実行。"
+            title: "通信会社ポイント管理システム",
+            period: "2023年10月 — 2024年3月",
+            role: "バックエンド開発",
+            description: "大規模トラフィックを扱う通信会社向けのポイント計算ロジックの実装を中心としたバックエンド開発プロジェクト。",
+            tags: ["Java", "Spring Boot", "Oracle"],
+            featured: false,
+            process: "複雑なポイント計算ロジックの実装に加え、結合テスト・総合テストの計画・実施を担当。"
+        },
+        {
+            id: 4,
+            title: "AI駆動開発 実践ポートフォリオサイト",
+            period: "2026年3月",
+            role: "AIプロセス実装",
+            description: "最新の自律型AIエージェントを活用し、エンジニア向けのポートフォリオサイトを構築。プロンプトベースでの要件定義から実装準備までを完遂。",
+            tags: ["Next.js", "Tailwind CSS", "Vercel"],
+            featured: false,
+            process: "Google AntigravityなどのAIエージェントを用いた実装プロセスの検証。抽象的な指示ではなく、正確な事実ベースのプロンプトによるサイト再構築を実施。"
         }
     ];
 
@@ -39,7 +54,8 @@ export default function Portfolio() {
             <div className="text-center mb-16">
                 <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">プロジェクト・実績</h1>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    これまでに手掛けたシステム開発の事例と、最新のAIツールを用いた実践的な開発実績をご紹介します。
+                    AIを実務レベルでプロセスに組み込んだ最新の開発事例から、エンタープライズ向けの堅牢なバックエンド開発まで、
+                    これまで手掛けてきた主要なシステム開発の実績です。
                 </p>
             </div>
 
@@ -47,7 +63,7 @@ export default function Portfolio() {
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className={`flex flex-col rounded-2xl border ${project.featured ? 'border-blue-200 bg-blue-50/50 shadow-[0_4px_15px_rgba(59,130,246,0.1)]' : 'border-gray-200 bg-white shadow-sm'} p-8 transition-all hover:shadow-md hover:-translate-y-1`}
+                        className={`flex flex-col rounded-2xl border ${project.featured ? 'border-blue-200 bg-blue-50/50 shadow-md' : 'border-gray-200 bg-white shadow-sm'} p-8 transition-all hover:shadow-md hover:-translate-y-1`}
                     >
                         {project.featured && (
                             <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
@@ -55,40 +71,30 @@ export default function Portfolio() {
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
                                 </span>
-                                AI顧問 実証プロジェクト
+                                現在進行中 / AI統合プロジェクト
                             </div>
                         )}
 
-                        <h2 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-1">{project.title}</h2>
+                        <div className="text-sm font-medium text-gray-500 mb-4">{project.period}</div>
                         <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
                             {project.description}
                         </p>
 
                         {project.process && (
                             <div className="mb-6 rounded-lg bg-gray-50 p-4 border border-gray-200">
-                                <h3 className="text-sm font-bold text-gray-700 mb-2">実装プロセス</h3>
+                                <h3 className="text-sm font-bold text-gray-700 mb-2">取り組み / プロセス</h3>
                                 <p className="text-xs text-gray-600">{project.process}</p>
                             </div>
                         )}
 
                         <div className="mt-auto">
-                            <div className="flex flex-wrap gap-2 mb-6">
+                            <div className="flex flex-wrap gap-2">
                                 {project.tags.map((tag) => (
-                                    <span key={tag} className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
+                                    <span key={tag} className="rounded-md bg-gray-100 border border-gray-200 px-2.5 py-1 text-xs font-medium text-gray-600">
                                         {tag}
                                     </span>
                                 ))}
-                            </div>
-
-                            <div className="flex items-center gap-4">
-                                <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors">
-                                    <ExternalLink size={16} /> 詳細を見る
-                                </a>
-                                {project.featured && (
-                                    <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                                        <Github size={16} /> Source Code
-                                    </a>
-                                )}
                             </div>
                         </div>
                     </div>
