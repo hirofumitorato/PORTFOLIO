@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Clock } from "lucide-react";
 
 export const metadata = {
     title: "Projects | Torato Hirofumi",
@@ -49,6 +49,25 @@ export default function Portfolio() {
         }
     ];
 
+    const comingSoonProjects = [
+        {
+            id: "cs-1",
+            title: "AI Controlled Online Interview System（構造化AI面接エンジン）",
+            description: "LLMを厳密に制御し、事前定義された質問および分岐ルールに基づいて進行するオンラインAI面接システムの個人開発プロジェクト。",
+            features: [
+                "日本語対応",
+                "ルールベース分岐制御",
+                "JSON強制出力による厳密プロンプト設計",
+                "面接ログ保存",
+                "スコアリングおよび評価生成",
+                "Ruby on Rails API連携設計"
+            ],
+            purpose: "AIを自由生成用途ではなく、制御可能な評価エンジンとして設計することを目的とする。",
+            tags: ["TypeScript", "NestJS", "LLM (OpenAI or Claude)", "Whisper", "REST API", "JSON Schema"],
+            note: "※現在開発中。近日デモ公開予定。"
+        }
+    ];
+
     return (
         <div className="container mx-auto px-4 py-20 max-w-6xl">
             <div className="text-center mb-16">
@@ -59,7 +78,8 @@ export default function Portfolio() {
                 </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
+            {/* 既存のプロジェクト実装 */}
+            <div className="grid gap-8 lg:grid-cols-2 mb-24">
                 {projects.map((project) => (
                     <div
                         key={project.id}
@@ -99,6 +119,68 @@ export default function Portfolio() {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            {/* AI / LLM 個人開発実績 (Coming Soon) */}
+            <div className="border-t border-gray-200 pt-20">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 mb-4">AI / LLM 個人開発実績</h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        最新のAI・LLM技術を活用し、業務プロセスの高度な自動化を目指す個人開発プロジェクトです。
+                    </p>
+                </div>
+
+                <div className="grid gap-8 lg:grid-cols-2">
+                    {comingSoonProjects.map((project) => (
+                        <div
+                            key={project.id}
+                            className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 relative overflow-hidden"
+                        >
+                            {/* Coming Soon バッジ */}
+                            <div className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-purple-100 px-3 py-1 text-xs font-bold text-purple-700 w-fit border border-purple-200 shadow-sm">
+                                <Clock size={14} />
+                                Coming Soon
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">{project.title}</h3>
+
+                            <p className="text-gray-600 mb-5 text-sm leading-relaxed font-medium">
+                                {project.description}
+                            </p>
+
+                            <div className="mb-6 bg-gray-50 rounded-xl p-5 border border-gray-100 flex-grow">
+                                <ul className="text-gray-700 text-xs space-y-2.5 mb-4 font-medium">
+                                    {project.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-start gap-2">
+                                            <span className="text-blue-500 mt-0.5">•</span>
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="pt-4 border-t border-gray-200">
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed">
+                                        {project.purpose}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="mt-auto">
+                                <div className="flex flex-wrap gap-2 mb-5">
+                                    {project.tags.map((tag) => (
+                                        <span key={tag} className="rounded-md bg-gray-100 border border-gray-200 px-2.5 py-1 text-[11px] font-semibold text-gray-600">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="text-xs font-bold text-gray-500 mt-4 flex items-center justify-between">
+                                    <span>{project.note}</span>
+                                    {/* 詳細ページはないためリンクは非表示。将来追加可能なスペース */}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
