@@ -37,8 +37,8 @@ export default function Portfolio() {
     return (
         <div className="container mx-auto px-4 py-20 max-w-6xl">
             <div className="text-center mb-16">
-                <h1 className="text-4xl font-extrabold tracking-tight text-white mb-4">プロジェクト・実績</h1>
-                <p className="text-gray-400 max-w-2xl mx-auto">
+                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">プロジェクト・実績</h1>
+                <p className="text-gray-600 max-w-2xl mx-auto">
                     これまでに手掛けたシステム開発の事例と、最新のAIツールを用いた実践的な開発実績をご紹介します。
                 </p>
             </div>
@@ -47,45 +47,45 @@ export default function Portfolio() {
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className={`flex flex-col rounded-2xl border ${project.featured ? 'border-blue-500/50 bg-blue-900/10 shadow-[0_0_15px_rgba(59,130,246,0.1)]' : 'border-gray-800 bg-gray-900/50'} p-8 transition-transform hover:-translate-y-1`}
+                        className={`flex flex-col rounded-2xl border ${project.featured ? 'border-blue-200 bg-blue-50/50 shadow-[0_4px_15px_rgba(59,130,246,0.1)]' : 'border-gray-200 bg-white shadow-sm'} p-8 transition-all hover:shadow-md hover:-translate-y-1`}
                     >
                         {project.featured && (
-                            <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-400 w-fit">
+                            <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
                                 </span>
                                 AI顧問 実証プロジェクト
                             </div>
                         )}
 
-                        <h2 className="text-2xl font-bold text-white mb-3">{project.title}</h2>
-                        <p className="text-gray-400 mb-6 flex-grow leading-relaxed text-sm">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h2>
+                        <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
                             {project.description}
                         </p>
 
                         {project.process && (
-                            <div className="mb-6 rounded-lg bg-black/40 p-4 border border-gray-800/80">
-                                <h3 className="text-sm font-bold text-gray-300 mb-2">実装プロセス</h3>
-                                <p className="text-xs text-gray-400">{project.process}</p>
+                            <div className="mb-6 rounded-lg bg-gray-50 p-4 border border-gray-200">
+                                <h3 className="text-sm font-bold text-gray-700 mb-2">実装プロセス</h3>
+                                <p className="text-xs text-gray-600">{project.process}</p>
                             </div>
                         )}
 
                         <div className="mt-auto">
                             <div className="flex flex-wrap gap-2 mb-6">
                                 {project.tags.map((tag) => (
-                                    <span key={tag} className="rounded-md bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-300">
+                                    <span key={tag} className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
 
                             <div className="flex items-center gap-4">
-                                <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
+                                <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors">
                                     <ExternalLink size={16} /> 詳細を見る
                                 </a>
                                 {project.featured && (
-                                    <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                                    <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
                                         <Github size={16} /> Source Code
                                     </a>
                                 )}

@@ -32,13 +32,13 @@ export default function Profile() {
 
     return (
         <div className="container mx-auto px-4 py-20 max-w-4xl">
-            <h1 className="mb-10 text-4xl font-extrabold tracking-tight text-white border-b border-gray-800 pb-4">
+            <h1 className="mb-10 text-4xl font-extrabold tracking-tight text-gray-900 border-b border-gray-200 pb-4">
                 プロフィール
             </h1>
 
             <section className="mb-16">
-                <h2 className="mb-6 text-2xl font-bold text-gray-200">Hirofumi Torato</h2>
-                <div className="prose prose-invert max-w-none text-gray-400">
+                <h2 className="mb-6 text-2xl font-bold text-gray-800">Hirofumi Torato</h2>
+                <div className="prose max-w-none text-gray-600">
                     <p className="leading-relaxed">
                         長年のバックエンド開発経験と、クラウドインフラ（特にAWS）における深い知見を持つフルスタックエンジニアです。
                         アジャイル開発の実践を通じて、変化に柔軟に対応しながら高い品質のソフトウェアを提供することに注力してきました。
@@ -49,24 +49,24 @@ export default function Profile() {
             </section>
 
             <section>
-                <h2 className="mb-8 text-2xl font-bold text-gray-200 flex items-center gap-3">
+                <h2 className="mb-8 text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span className="h-8 w-1 rounded-full bg-blue-500 block"></span>
                     職務経歴
                 </h2>
 
-                <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-700 before:to-transparent">
-                    {experiences.map((exp, index) => (
+                <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                    {experiences.map((exp) => (
                         <div key={exp.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 text-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 bg-white text-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors group-hover:border-blue-400 group-hover:shadow-md">
                                 <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
                             </div>
-                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-gray-900/80 p-6 rounded-xl border border-gray-800 shadow-xl backdrop-blur-sm">
+                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-shadow">
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                                    <h3 className="font-bold text-xl text-white">{exp.role}</h3>
-                                    <span className="text-xs font-semibold text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">{exp.period}</span>
+                                    <h3 className="font-bold text-xl text-gray-900">{exp.role}</h3>
+                                    <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">{exp.period}</span>
                                 </div>
-                                <div className="text-sm text-gray-400 font-medium mb-4">{exp.company}</div>
-                                <ul className="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <div className="text-sm text-gray-500 font-medium mb-4">{exp.company}</div>
+                                <ul className="text-gray-600 text-sm space-y-2 list-disc list-inside marker:text-gray-400">
                                     {exp.details.map((detail, idx) => (
                                         <li key={idx}>{detail}</li>
                                     ))}

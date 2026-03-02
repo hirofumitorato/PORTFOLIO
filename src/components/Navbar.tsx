@@ -10,17 +10,17 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-          <span className="text-blue-500">H</span>.Torato
+        <Link href="/" className="text-xl font-bold tracking-tighter text-gray-900">
+          <span className="text-blue-600">H</span>.Torato
         </Link>
         <div className="hidden md:flex gap-6">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
             >
               {item.name}
             </Link>
