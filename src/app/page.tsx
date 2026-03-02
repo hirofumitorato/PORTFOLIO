@@ -29,7 +29,7 @@ export default function Home() {
           <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-blue-500/10 p-3 text-blue-400">
             <Code2 size={24} />
           </div>
-          <h3 className="mb-2 text-xl font-bold">フルスタック開発</h3>
+          <h3 className="mb-2 text-xl font-bold text-white">フルスタック開発</h3>
           <p className="text-gray-400 text-sm">
             TypeScript, Go, Rustを用いた堅牢なバックエンドアーキテクチャ設計から、モダンなフロントエンド(Next.js)構築まで、一気通貫で対応します。
           </p>
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-emerald-500/10 p-3 text-emerald-400">
             <Cpu size={24} />
           </div>
-          <h3 className="mb-2 text-xl font-bold">AWS & IoT</h3>
+          <h3 className="mb-2 text-xl font-bold text-white">AWS & IoT</h3>
           <p className="text-gray-400 text-sm">
             AWS IoT Core, Lambda, DynamoDBを活用したスケーラブルなインフラ構築、およびアジャイル開発手法により、複雑なシステム要件を実現します。
           </p>
@@ -47,7 +47,7 @@ export default function Home() {
           <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-purple-500/10 p-3 text-purple-400">
             <Bot size={24} />
           </div>
-          <h3 className="mb-2 text-xl font-bold">AI顧問としての挑戦</h3>
+          <h3 className="mb-2 text-xl font-bold text-white">AI顧問としての挑戦</h3>
           <p className="text-gray-400 text-sm">
             お客様の曖昧な要件を明確に整理し、Google AntigravityやClaude Codeなどの最新AIエージェントと密接に連携することで、アイデアを最速で形にします。
           </p>
