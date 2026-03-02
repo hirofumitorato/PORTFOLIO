@@ -1,65 +1,71 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Bot, Code2, Cpu } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="container mx-auto px-4 py-20 lg:py-32">
+      <div className="mx-auto max-w-4xl text-center">
+        <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+          バックエンドエンジニア、AI顧問、そしてAntigravityの活用者。
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+          最新のテクノロジーとAIを駆使し、ビジネスの課題を解決するフルスタックエンジニア。
+          長年のバックエンド開発、クラウドインフラ(AWS/IoT)の経験を活かし、
+          次世代のシステムを構築します。
+        </p>
+
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <Link
+            href="/portfolio"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700"
+          >
+            プロジェクトを見る
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-gray-700 bg-transparent px-8 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800"
+          >
+            AI顧問へのご相談
+          </Link>
+        </div>
+      </div>
+
+      <div className="mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition hover:border-gray-700">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-blue-500/10 p-3 text-blue-400">
+            <Code2 size={24} />
+          </div>
+          <h3 className="mb-2 text-xl font-bold">フルスタック開発</h3>
+          <p className="text-gray-400 text-sm">
+            TypeScript, Go, Rustを用いた堅牢なバックエンドアーキテクチャ設計から、モダンなフロントエンド(Next.js)構築まで、一気通貫で対応します。
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition hover:border-gray-700">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-emerald-500/10 p-3 text-emerald-400">
+            <Cpu size={24} />
+          </div>
+          <h3 className="mb-2 text-xl font-bold">AWS & IoT</h3>
+          <p className="text-gray-400 text-sm">
+            AWS IoT Core, Lambda, DynamoDBを活用したスケーラブルなインフラ構築、およびアジャイル開発手法により、複雑なシステム要件を実現します。
+          </p>
         </div>
-      </main>
+        <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition hover:border-gray-700 sm:col-span-2 lg:col-span-1">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-purple-500/10 p-3 text-purple-400">
+            <Bot size={24} />
+          </div>
+          <h3 className="mb-2 text-xl font-bold">AI顧問としての挑戦</h3>
+          <p className="text-gray-400 text-sm">
+            お客様の曖昧な要件を明確に整理し、Google AntigravityやClaude Codeなどの最新AIエージェントと密接に連携することで、アイデアを最速で形にします。
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-24 text-center">
+        <h2 className="text-2xl font-bold text-white mb-6">AIの力で、開発の新時代へ。</h2>
+        <Link href="/skills" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300">
+          スキルと技術スタックの詳細を見る <ArrowRight size={16} />
+        </Link>
+      </div>
     </div>
   );
 }
