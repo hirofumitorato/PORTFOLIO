@@ -21,12 +21,6 @@ export default function Home() {
           >
             プロジェクトを見る
           </Link>
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-gray-700 bg-transparent px-8 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800"
-          >
-            AI顧問へのご相談
-          </Link>
         </div>
       </div>
 
