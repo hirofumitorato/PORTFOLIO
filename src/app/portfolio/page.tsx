@@ -122,7 +122,7 @@ export default function Portfolio() {
             </div>
 
             {/* AI / LLM 個人開発実績 (Coming Soon) */}
-            <div className="border-t border-gray-200 pt-20">
+            <div id="cs-1" className="border-t border-gray-200 pt-20 scroll-mt-24">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 mb-4">AI / LLM 個人開発実績</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
